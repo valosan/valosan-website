@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Map</title>
+  <style type="text/css">
+    @keyframes ping {
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    .dot {
+      animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+      opacity: 0.75;
+      border-radius: 9999px;
+      width: 0.75rem;
+      height: 0.75rem;
+      display: inline-flex;
+      position: absolute;
+      background-color: #092340;
+      left: attr(data-x);
+      top: attr(data-y);
+    }
+
+    .container {
+      position: relative;
+      display: inline-flex;
+      width: 693px;
+      box-sizing: border-box;
+      transform: scale(0.5);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="globe.svg" width="693" />
+    <div class="dot" style="left: 221px; top: 247px"></div>
+    <div class="dot" style="left: 524px; top: 283px"></div>
+    <div class="dot" style="left: 522px; top: 370px"></div>
+  </div>
+</body>
+
+</html>

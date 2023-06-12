@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.hero > .dot {
+  animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0.75;
+  border-radius: 9999px;
+  width: 0.75rem;
+  height: 0.75rem;
+  display: inline-flex;
+  position: absolute;
+  background-color: #092340;
+  left: attr(data-x);
+  top: attr(data-y);
+}
+
+.hero {
+  position: relative;
+  display: inline-flex;
+  width: 693px;
+  box-sizing: border-box;
+  /*transform: scale(0.5);*/
+}
