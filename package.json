@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "parcel build --no-source-maps --public-url '.'",
-    "dev": "parcel index.html -p 3000 --public-url '.'"
+    "dev": "parcel index.html -p 3000"
   },
   "keywords": [],
   "author": "",
