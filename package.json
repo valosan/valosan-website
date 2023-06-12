@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "parcel build --no-source-maps",
-    "dev": "parcel index.html -p 3000"
+    "build": "parcel build --no-source-maps --public-url '.'",
+    "dev": "parcel index.html -p 3000 --public-url '.'"
   },
   "keywords": [],
   "author": "",
