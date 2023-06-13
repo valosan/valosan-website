@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @keyframes ping {
-  75%,
+  45%,
   100% {
     transform: scale(2);
     opacity: 0;
@@ -12,7 +12,7 @@
 
 .hero > .dot {
   animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-  opacity: 0.75;
+  opacity: 0.60;
   border-radius: 9999px;
   width: 0.75rem;
   height: 0.75rem;
@@ -31,13 +31,12 @@
   /*transform: scale(0.5);*/
 }
 
-.__react_component_tooltip {
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-out !important;
-  opacity: 0 !important;
-  visibility: visible;
+.hero .fade-tooltip {
+  opacity: 0;
+  transition: opacity 0.6s linear important;
 }
 
-.__react_component_tooltip.show {
-  visibility: visible;
-  opacity: 1 !important;
+.hero .fade-tooltip.showing {
+  opacity: 1;
+  transition: opacity 0.6s linear important;
 }
