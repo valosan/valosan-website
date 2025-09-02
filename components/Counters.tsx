@@ -11,6 +11,7 @@ interface CounterData {
   id: string;
   icon: React.ReactNode;
   target: number;
+  type?: string;
   label: string;
 }
 
@@ -21,25 +22,26 @@ export const Counters = ({ ...props }) => {
     { 
       id: "campaigns", 
       icon: <Target className="w-16 h-16 text-blue-600 stroke-1" />, 
-      target: 125, 
-      label: "Campaigns Executed" 
+      target: 327, 
+      label: "Campaigns (2024)" 
     },
     { 
       id: "mediahits", 
       icon: <Newspaper className="w-16 h-16 text-green-600 stroke-1" />, 
-      target: 1201, 
-      label: "Media Hits Published" 
+      target: 4254, 
+      label: "Media Hits (2024)" 
     },
     { 
       id: "topmedia", 
       icon: <Trophy className="w-16 h-16 text-yellow-600 stroke-1" />, 
-      target: 20, 
-      label: "Top-tier Media Reached" 
+      target: 3.24, 
+      type: "currency",
+      label: "Average Funding Round" 
     },
     { 
       id: "years", 
       icon: <Calendar className="w-16 h-16 text-purple-600 stroke-1" />, 
-      target: 15, 
+      target: 15,   
       label: "Years in PR" 
     }
   ], []);
@@ -86,7 +88,7 @@ export const Counters = ({ ...props }) => {
           <article key={counter.id} className="flex flex-col justify-center text-center">
             <div className="flex justify-center mb-4">{counter.icon}</div>
             <div className="text-5xl font-bold mt-2 min-w-[5ch] text-gray-800">
-              {counts[counter.id] || 0}
+              {counter.type === "currency" ? counts[counter.id] + " M€": counts[counter.id] || 0}
             </div>
             <span className="text-lg text-gray-600 mt-2">{counter.label}</span>
           </article>
