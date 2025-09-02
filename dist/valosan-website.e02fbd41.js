@@ -24966,7 +24966,7 @@ const Widget = ({ ...props })=>{
         },
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: "./globe.svg",
+                src: "https://valosan.github.io/valosan-website/globe.svg",
                 width: "693"
             }, void 0, false, {
                 fileName: "components/Widget.jsx",
