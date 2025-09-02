@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
-import globe from "../public/globe.svg";
 import "../index.css";
 import { Tooltip } from "react-tooltip";
 
@@ -39,8 +38,6 @@ export const Widget = ({ ...props }) => {
     return () => clearInterval(interval);
   }, []);
 
-  console.log("globe", globe);
-
   return (
     <div
       className="hero"
@@ -48,7 +45,7 @@ export const Widget = ({ ...props }) => {
         transform: "scale(" + scale + ")",
       }}
     >
-      <img src={globe} width="693" />
+      <img src="./globe.svg" width="693" />
       <div className="dot" id="anchor1" style={{ left: "221px", top: "247px" }}></div>
       <div className="dot" id="anchor2" style={{ left: "524px", top: "283px" }}></div>
       <div className="dot" id="anchor3" style={{ left: "522px", top: "370px" }}></div>
