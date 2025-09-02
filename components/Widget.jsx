@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
 import "../index.css";
-import globe from "../public/globe.svg";
+import globe from "../src/globe.svg";
 import { Tooltip } from "react-tooltip";
 
 const messages = [

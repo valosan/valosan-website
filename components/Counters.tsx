@@ -53,7 +53,7 @@ export const Counters = ({ ...props }) => {
   }, [counterData, animateCounter]);
 
   return (
-    <div className="flex items-center justify-center py-8 text-white font-mono overflow-hidden">
+    <div className="flex items-center justify-center py-8  font-mono overflow-hidden">
       <div className="flex flex-col sm:flex-row items-center justify-center">
         {counterData.map((counter) => (
           <article key={counter.id} className="flex flex-col justify-center text-center mx-8 my-8">
