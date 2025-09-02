@@ -23,7 +23,7 @@ export default defineConfig({
                   mkdirSync(destDir, { recursive: true })
                 }
                 copyImages(srcPath, destPath)
-              } else if (item.match(/\.(png|svg|jpg|jpeg|gif|webp)$/)) {
+              } else if (item.match(/\.(png|svg|jpg|jpeg|gif|webp|css)$/)) {
                 // Create destination directory if it doesn't exist
                 mkdirSync(destDir, { recursive: true })
                 copyFileSync(srcPath, destPath)
