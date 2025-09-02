@@ -1,9 +1,15 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
+import { 
+  Target, 
+  Newspaper, 
+  Trophy, 
+  Calendar 
+} from "lucide-react";
 import "../index.css";
 
 interface CounterData {
   id: string;
-  icon: string;
+  icon: React.ReactNode;
   target: number;
   label: string;
 }
@@ -12,9 +18,30 @@ export const Counters = ({ ...props }) => {
   const [counts, setCounts] = useState<Record<string, number>>({});
 
   const counterData: CounterData[] = useMemo(() => [
-    { id: "instagram", icon: "📷", target: 12000, label: "Instagram Followers" },
-    { id: "youtube", icon: "📺", target: 5000, label: "YouTube Subscribers" },
-    { id: "facebook", icon: "👥", target: 7500, label: "Facebook Fans" }
+    { 
+      id: "campaigns", 
+      icon: <Target className="w-16 h-16 text-blue-600 stroke-1" />, 
+      target: 125, 
+      label: "Campaigns Executed" 
+    },
+    { 
+      id: "mediahits", 
+      icon: <Newspaper className="w-16 h-16 text-green-600 stroke-1" />, 
+      target: 1201, 
+      label: "Media Hits Published" 
+    },
+    { 
+      id: "topmedia", 
+      icon: <Trophy className="w-16 h-16 text-yellow-600 stroke-1" />, 
+      target: 20, 
+      label: "Top-tier Media Reached" 
+    },
+    { 
+      id: "years", 
+      icon: <Calendar className="w-16 h-16 text-purple-600 stroke-1" />, 
+      target: 15, 
+      label: "Years in PR" 
+    }
   ], []);
 
   const animateCounter = useCallback((id: string, target: number) => {
@@ -53,15 +80,15 @@ export const Counters = ({ ...props }) => {
   }, [counterData, animateCounter]);
 
   return (
-    <div className="flex items-center justify-center py-8  font-mono overflow-hidden">
-      <div className="flex flex-col sm:flex-row items-center justify-center">
+    <div className="flex items-center justify-center py-8 font-mono overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-center">
         {counterData.map((counter) => (
-          <article key={counter.id} className="flex flex-col justify-center text-center mx-8 my-8">
-            <div className="text-6xl mb-2">{counter.icon}</div>
-            <div className="text-6xl mt-2 min-w-[5ch]">
+          <article key={counter.id} className="flex flex-col justify-center text-center">
+            <div className="flex justify-center mb-4">{counter.icon}</div>
+            <div className="text-5xl font-bold mt-2 min-w-[5ch] text-gray-800">
               {counts[counter.id] || 0}
             </div>
-            <span className="text-lg">{counter.label}</span>
+            <span className="text-lg text-gray-600 mt-2">{counter.label}</span>
           </article>
         ))}
       </div>
