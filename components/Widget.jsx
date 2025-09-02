@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo, useCallback } from "react";
 import "../index.css";
+import globe from "../public/globe.svg";
 import { Tooltip } from "react-tooltip";
 
 const messages = [
@@ -45,7 +46,7 @@ export const Widget = ({ ...props }) => {
         transform: "scale(" + scale + ")",
       }}
     >
-      <img src="https://valosan.github.io/valosan-website/globe.svg" width="693" />
+      <img src={globe} width="693" />
       <div className="dot" id="anchor1" style={{ left: "221px", top: "247px" }}></div>
       <div className="dot" id="anchor2" style={{ left: "524px", top: "283px" }}></div>
       <div className="dot" id="anchor3" style={{ left: "522px", top: "370px" }}></div>
