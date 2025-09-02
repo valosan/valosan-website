@@ -39,6 +39,8 @@ export const Widget = ({ ...props }) => {
     return () => clearInterval(interval);
   }, []);
 
+  console.log("globe", globe);
+
   return (
     <div
       className="hero"
